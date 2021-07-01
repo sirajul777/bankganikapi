@@ -4,14 +4,7 @@ require("dotenv").config();
 const AuthController = require("../controllers/AuthController");
 
 // route base
-router.get("/", async (req, res) => {
-  try {
-    let user = await auth.getUser();
-    return res.json(user);
-  } catch (error) {
-    console.log(error);
-  }
-});
+router.get("/", AuthController.getuser);
 
 //login user
 router.route("/auth").get(AuthController.getuser).post(AuthController.register);

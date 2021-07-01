@@ -15,7 +15,7 @@ app.use(cors);
 // todo declare file url
 app.use("/files", express.static("library"));
 
-app.use("/API", route);
+app.use("/", route);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
